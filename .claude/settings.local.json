@@ -3,7 +3,11 @@
     "allow": [
       "WebFetch(domain:parallelum.com.br)",
       "WebSearch",
-      "mcp__laravel-boost__tinker"
+      "mcp__laravel-boost__tinker",
+      "mcp__laravel-boost__application-info",
+      "mcp__laravel-boost__database-schema",
+      "mcp__laravel-boost__search-docs",
+      "WebFetch(domain:spatie.be)"
     ]
   },
   "enableAllProjectMcpServers": true,
