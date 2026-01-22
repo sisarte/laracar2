@@ -19,7 +19,6 @@ class Vehicle extends Model implements HasMedia
     use InteractsWithMedia;
 
     protected $fillable = [
-        'user_id',
         'model_version_id',
         'year',
         'price',
@@ -42,14 +41,6 @@ class Vehicle extends Model implements HasMedia
             'transmission' => Transmission::class,
             'status' => VehicleStatus::class,
         ];
-    }
-
-    /**
-     * @return BelongsTo<User, $this>
-     */
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
     }
 
     /**

@@ -4,7 +4,6 @@ use App\Enums\FuelType;
 use App\Enums\Transmission;
 use App\Enums\VehicleStatus;
 use App\Models\ModelVersion;
-use App\Models\User;
 use App\Models\Vehicle;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -30,27 +29,12 @@ test('vehicle has correct casts for enums', function () {
         ->and($vehicle->status)->toBe(VehicleStatus::Active);
 });
 
-test('vehicle belongs to user', function () {
-    $user = User::factory()->create();
-    $vehicle = Vehicle::factory()->create(['user_id' => $user->id]);
-
-    expect($vehicle->user)->toBeInstanceOf(User::class)
-        ->and($vehicle->user->id)->toBe($user->id);
-});
-
 test('vehicle belongs to model version', function () {
     $modelVersion = ModelVersion::factory()->create();
     $vehicle = Vehicle::factory()->create(['model_version_id' => $modelVersion->id]);
 
     expect($vehicle->modelVersion)->toBeInstanceOf(ModelVersion::class)
         ->and($vehicle->modelVersion->id)->toBe($modelVersion->id);
-});
-
-test('user has many vehicles', function () {
-    $user = User::factory()->create();
-    Vehicle::factory()->count(3)->create(['user_id' => $user->id]);
-
-    expect($user->vehicles)->toHaveCount(3);
 });
 
 test('model version has many vehicles', function () {

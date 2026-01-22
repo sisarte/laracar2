@@ -6,7 +6,6 @@ use App\Enums\FuelType;
 use App\Enums\Transmission;
 use App\Enums\VehicleStatus;
 use App\Models\ModelVersion;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,7 +21,6 @@ class VehicleFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::factory(),
             'model_version_id' => ModelVersion::factory(),
             'year' => fake()->numberBetween(2000, 2025),
             'price' => fake()->randomFloat(2, 10000, 500000),
