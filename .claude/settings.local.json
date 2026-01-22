@@ -7,7 +7,9 @@
       "mcp__laravel-boost__application-info",
       "mcp__laravel-boost__database-schema",
       "mcp__laravel-boost__search-docs",
-      "WebFetch(domain:spatie.be)"
+      "WebFetch(domain:spatie.be)",
+      "mcp__laravel-boost__list-routes",
+      "mcp__laravel-boost__browser-logs"
     ]
   },
   "enableAllProjectMcpServers": true,
